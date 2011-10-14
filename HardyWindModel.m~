@@ -1,0 +1,47 @@
+classdef HardyWindModel < WindModel
+    properties
+        groundlayerwindvelocity = 0;
+        tropopausewindvelocity = 0;
+        tropopauseheight = 0;
+        tropopausethickness = 0;
+    end
+    methods
+        function obj = HardyWindModel(varargin)
+            % constructor
+            % 1. copy constructor
+            % 2. obj = HardyWindModel(groundlayerspeed, tropolayerspeed,
+            % tropoheight, tropothickness)
+            % the model follows Hardy's (3.20)
+            if nargin == 1 && isa(varargin, 'HardyWindModel')
+                obj.groundlayerwindvelocity = varargin.groundlayerwindvelocity;
+                obj.tropopausewindvelocity = varargin.tropopausewindvelocity;
+                obj.tropopauseheight = varargin.tropopauseheight;
+                obj.tropopausethickness = varargin.tropopausethickness;
+            elseif nargin == 4
+                obj.groundlayerwindvelocity = varargin{1};
+                obj.tropopausewindvelocity = varargin{2};
+                obj.tropopauseheight = varargin{3};
+                obj.tropopausethickness = varargin{4};
+            end
+        end
+        function result = getRandomWindVectors(heights, ref_frame)
+            result = cell(1, length(heights));
+            groundvx = randn(1); groundvy = randn(1);
+            tropovx = randn(1); tropovy = randn(1);
+            
+            groundvx = groundvx*obj.groundlayerwindvelocity;
+            groundvy = groundvy*obj.groundlayerwindvelocity;
+            
+            tropovx = tropovx*obj.tropopausewindvelocity;
+            tropovy = tropovy*obj.tropopausewindvelocity;
+            
+            for i=1:length(result)
+                if obj.tropopausethickness<0
+               tmp = (heights[i]-obj.tropopauseheight)/obj.tropopausethickness;
+               result{i} = Vector(
+            end
+            
+        end
+    end
+    
+end

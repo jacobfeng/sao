@@ -1,0 +1,201 @@
+commit 31c525354d0826437d4e18e19e519502b7c404a0
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Fri Oct 14 10:26:48 2011 +0800
+
+    	new file:   Aperture.m
+    		abstract class for all kinds of derivative aperture class
+    	new file:   CircularAperture.m
+    		haven't finished
+    	new file:   Optic.m
+    		abstract class providing choices wether areal weighting is supported or not
+    	new file:   PlaneOptic.m
+    		abstract class providing functions for determine plane geometry
+    	new file:   RectangularRegion.m
+    		class represetning a 3d rectangular region definition
+
+commit 0a94fa7fde375f2ec0735425daa32f4fcb7cf67c
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Fri Oct 14 09:14:37 2011 +0800
+
+    	modified:   HardyWindModel.m
+    		fixed a bug, another problem with this method is the definition of Hardy's equation, where is the tropopause velocity that s defined
+
+commit 831b749c6b87f10236d47d142a5c25cd6abbe1e7
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Fri Oct 14 09:04:56 2011 +0800
+
+    	modified:   HardyWindModel.m
+    		found a bug in the design of HardyWindModel::getRandomWindVectors(), the problem is for different layer, the vector are actually in the same direction for different layer, but it is actually different from the first thought
+
+commit b0dcceeb8ffb9e55eec7f72910e0af0fadcbcc0b
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Fri Oct 14 08:56:31 2011 +0800
+
+    	modified:   WindModel.m
+    		bug fixed, inconsisted file name for abstract method
+
+commit f63ae9d45f11d564c057d356c0de40c105714d93
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 16:43:57 2011 +0800
+
+    	new file:   HardyWindModel.m
+    		implementation of random wind vector for different heights, following Hardy's (3.20)
+    	new file:   WindModel.m
+    		abstract class
+
+commit 88a817c64e800e1e45ce9f7cedc898f2287d0da2
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 15:36:35 2011 +0800
+
+    	new file:   PixelAmpArray.m
+    		will be used for photometry, no function is really implemented
+    	new file:   PixelPhaseArray.m
+    		will be used for phase_estimate, no function is really implemented
+
+commit cf03f1e239fb1f69dda761ff23138da55c79e3c1
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 14:57:53 2011 +0800
+
+    	modified:   Emitter.m
+    		changed made to Emitter(), a overwrite plus() function is need in diffractive_wavefront class
+    	modified:   PlaneWaveEmitter.m
+    		change same as Emitter() class
+
+commit 3768b9ad589cfd7b57b9591b58e6fccecf541cc7
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 14:47:28 2011 +0800
+
+    	new file:   Emitter.m
+    	new file:   PlaneWaveEmitter.m
+
+commit 6ca0ac2199e86e791f33ecfe501add79cd8cfd7f
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 14:25:19 2011 +0800
+
+    	modified:   NullInnerScale.m
+    		fixed a bug for value() function
+    	modified:   PowerSpectrum.m
+    		Power spectrum is an abstarct class, please note that the power spectrum uses value from power law nad inner scale function. yet there is somehow
+
+commit 19bc16458875898bdb56067d28b9731070d4a040
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 14:14:16 2011 +0800
+
+    	new file:   IsotropicPowerLawSpectrum.m
+    		isotropic power spectrum
+    	new file:   PowerSpectrum.m
+    		power spectrum basic class
+
+commit a98aaafc91e2c26b00c2d73a6e502111d7f76106
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 12:03:00 2011 +0800
+
+    	modified:   GreenwoodPowerLaw.m
+    		change line 39 to line 40
+    	modified:   VonKarmanPowerLaw.m
+    		change line 39 to line 40, the problem with 0.033*Cn2*pow(k,-11/3)
+
+commit 49545c89b35321f20b6ca1ac687f210f359682e0
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 11:42:12 2011 +0800
+
+    	modified:   PowerLaw.m
+    		changed line 32, from 2*pi*0.033 to 0.033 according to Hardy (3.14)
+
+commit b3c90e4075868e7862a147420c8312919f8f46b2
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 11:34:42 2011 +0800
+
+    	new file:   GreenwoodPowerLaw.m
+    		greeword power law calculation
+    	new file:   PowerLaw.m
+    		power law defined like Hardy (3.14)
+    	new file:   VonKarmanPowerLaw.m
+    		power law defined by von karman considering L0
+
+commit 84c5ac126a2b8db6488386f579b439d39f28c59a
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 11:05:31 2011 +0800
+
+    	modified:   FrehlichInnerScale.m
+    		remove license comment
+    	modified:   NullInnerScale.m
+    		remove license comment
+
+commit 4743a1fa1a6a70cd94ea7769348e0158049587ad
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 11:02:40 2011 +0800
+
+    	new file:   ExponentialInnerScale.m
+    		inner scale exponential defined by Hardy (3.96)
+    	new file:   FrehlichInnerScale.m
+    		inner scale exponential defined by Frehlich and Davis
+    	new file:   InnerScale.m
+    		inner scale base class
+    	new file:   NullInnerScale.m
+    		inner scale defined as all 1s
+
+commit e206bcaf75ee3ac4f16cc441eb7c3ba312829d4d
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 03:39:16 2011 +0800
+
+    	modified:   PixelArray.m
+    		test most of the functions, shift/rotate by FFT is very different from Arroyo, needs to check on another machine and a clean install. cross correlation result is very different, and it might be wrong for Arroyo
+    	new file:   RotateImage.m
+    		this is for 2d fourier transform image
+    	new file:   dftregistration.m
+    	new file:   efficient_subpixel_registration.m
+    		these two files are for subpixel registration
+
+commit ea94acdcc84563d6ad840ffacd0ea0633048aaac
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 02:28:02 2011 +0800
+
+    	new file:   FourierShift2D.m
+    	modified:   PixelArray.m
+    		found a bug when using FourierShift2D, the x and y is defined different in the function, corrected here
+
+commit 67ed8c386bec4144029c75c8de2abe6bbfa3832b
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 00:59:22 2011 +0800
+
+    	new file:   PixelArray.m
+    	modified:   computationalGeometry/getRayPlaneIntersection.m
+
+commit eaf333779b2166ecef08c87c08ac3641528d8f88
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Thu Oct 13 00:22:03 2011 +0800
+
+    	modified:   computationalGeometry/pointWithinPolygon.m
+    		tested, correct
+
+commit b55f15ab507ca4b2dab0375c29279dcae9e54f0c
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Wed Oct 12 23:35:47 2011 +0800
+
+    	modified:   Frame.m
+    			removed header comment
+    	modified:   Vector.m
+    			change on vector parallel_projection()
+    	modified:   computationalGeometry/convexPolygonIntegration.m
+    			this file is obsolete, the calculation is wrong, and its use cases are very rare
+    	modified:   computationalGeometry/getAreaOfPolygon.m
+    			found minor bugs in this function, for more than 2 points on the same line, the result is wrong, and extra reordering is needed before using. wether to add the above checking functions into the current implementation is not decided since extra calculation will be needed
+    	modified:   computationalGeometry/getLineSegmentIntersection.m
+    		no change made
+    	modified:   computationalGeometry/getRayRayIntersection.m
+    		a bug found on line 40
+    	modified:   computationalGeometry/reorder.m
+    		add function comment
+
+commit e8c62207eda1b8c1934a01ccdd3240ccf493069e
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Wed Oct 12 16:43:48 2011 +0800
+
+    correct Vector::parallel_projection() function's bug
+
+commit 74a00b33488e8d50cf5f94017464ed2a6d8b11b1
+Author: jacobfeng1982 <jacobfeng1982@users.sourceforge.net>
+Date:   Wed Oct 12 11:27:48 2011 +0800
+
+    version 0.1 computational geometry base files

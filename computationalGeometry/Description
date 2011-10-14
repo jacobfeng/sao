@@ -1,0 +1,84 @@
+% AO simulation - software for simulation of em wave propagation through turbulence and optics
+% Based on Arroyo from Dr. Matthew Britton.
+% 
+% Copyright (c) 2011 National Observatories Of China.  Written by
+% Dr. Lu, Feng.  For comments or questions about this software,
+% please contact the author at jacobfeng@gmail.com.
+% 
+% This program is free software; you can redistribute it and/or modify it
+% under the terms of the GNU General Public License as  published by the
+% Free Software Foundation; either version 2 of the License, or (at your
+% option) any later version.
+% 
+% This program is provided "as is" and distributed in the hope that it
+% will be useful, but WITHOUT ANY WARRANTY; without even the implied
+% warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  In no
+% event shall National Observatories of China be liable to any party
+% for direct, indirect, special, incidental or consequential damages,
+% including lost profits, arising out of the use of this software and its
+% documentation, even if National Observatories of China has been
+% advised of the possibility of such damage.   The National Observatories of 
+% China has no obligation to provide maintenance, support, updates,
+% enhancements or modifications.  See the GNU General Public License for
+% more details.
+% 
+% You should have received a copy of the GNU General Public License along
+% with this program; if not, write to the Free Software
+% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+
+
+% This folder contains all the function provided by Arroyo Computational Geomery file
+% Yet the implementation here in Matlab has some differences from the original
+% and a few functions are not implemented due to the uselessness at the moment in the whole library
+
+% implemented functions are not commented
+========================================================
+std::vector<Arroyo::three_point> get_line_segment_intersection(const three_point & a1, 
+				const three_point & a2, 
+				const three_point & b1,
+				const three_point & b2);
+
+========================================================
+Arroyo::three_point get_ray_plane_intersection(
+				const Arroyo::three_point & o_a, 
+				const Arroyo::three_vector & n_a,
+				const Arroyo::three_point & o_b, 
+				const Arroyo::three_vector & n_b);
+
+========================================================
+double get_area_of_polygon(
+		const std::vector<Arroyo::three_point> & polygon_vertices);
+
+======================================================== 
+% interface in matlab is different  
+bool point_within_polygon(const three_point & tp, 
+			    const vector<three_point> & vertices,
+			    bool & point_on_edge,
+			    bool & point_on_vertex);
+    
+========================================================
+% interface in matlab is different  
+bool point_within_polygon(
+		const three_point & tp, const vector<three_point> & vtp);
+
+========================================================
+% interface is different, no verbose option
+vector<three_point> get_convex_polygon_intersection(
+  			const vector<three_point> & first_polygon_vertices,
+			const vector<three_point> & second_polygon_vertices,
+			int verbose = 0);
+
+========================================================
+% not implemented
+vector<three_point> get_convex_polygon_circle_intersection(
+			const vector<three_point> & polygon_vertices,
+			const three_frame & circle_tf, 
+			double radius);
+
+========================================================
+% interface is different
+template<class T> void convex_polygon_integration(const three_frame & tf,
+			    const vector<three_point> & polygon_vertices,
+			    T & x_intgrl,
+			    T & y_intgrl,
+			    int verbose = 0){
